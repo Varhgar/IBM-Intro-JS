@@ -3,7 +3,7 @@ function performOperation() {
    let num1 = parseInt(document.getElementById('input1').value);
    let num2 = parseInt(document.getElementById('input2').value);
    //check if inputs are valid numbers
-   if (!isNaN(num1) && !isNaN(num2)) {
+   if (Number.isFinite(num1) && Number.isFinite(num2)) {
       //perform operation
       let result = multiply(num1, num2);
 
@@ -22,7 +22,7 @@ function multiply(a, b) {
    return a * b;
 }
 
-function displayResult() {
+function displayResult(result) {
    const resultElement = document.getElementById('result');
    resultElement.textContent = `The result is: ${result}`;
 }
